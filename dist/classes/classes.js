@@ -26,12 +26,15 @@ class Person {
     toString() {
         return `${this.name} ${this.lastName} ${this.age}`;
     }
+    equals(other) {
+        if (other === null)
+            return false;
+        return this.name === other.name && this.lastName === other.lastName && this.age === other.age;
+    }
 }
-// crear instancia de la clase Person
 const person1 = new Person('Fabian', 'Martinez', 22);
-// acceder a atributos mediante getters
-console.log(`${person1.getName} ${person1.getLastName} ${person1.getAge}`); // Output: Fabian Martinez 22
-// modificar atributos mediante setters
-person1.setAge = 23;
-// metodo de instancia
-console.log(person1.toString()); // Output: Fabian Martinez 23
+const person2 = new Person('Fabian', 'Martinez', 22);
+console.log(person1.toString()); // Output: Fabian Martinez 22
+console.log(person2.toString()); // Output: Fabian Martinez 22
+console.log(person1 == person2); // Output: false => se comparan las referencias
+console.log(person1.equals(person2)); // Output: true => se comparan los valores
