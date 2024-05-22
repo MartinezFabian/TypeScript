@@ -1,13 +1,5 @@
 class Person {
-  private name: string;
-  private lastName: string;
-  private age: number;
-
-  constructor(name: string, lastName: string, age: number) {
-    this.name = name;
-    this.lastName = lastName;
-    this.age = age;
-  }
+  constructor(private name: string, private lastName: string, private age: number) {}
 
   get getName(): string {
     return this.name;
